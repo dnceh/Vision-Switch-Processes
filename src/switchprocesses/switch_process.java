@@ -4,24 +4,35 @@ public class switch_process implements processes{
 	public String action(){
 		return null; 
 	}
+	static instances myInstances = instances.TWO;
 	public static void main(String[]args){
-		ActionOne myThing1 = new ActionOne(); 
-		ActionTwo myThing2 = new ActionTwo(); 
-		ActionThree myThing3 = new ActionThree(); 
-		ActionFour myThing4 = new ActionFour(); 
-		int choice = 2; 
-		if (choice == 1){
-			System.out.println(myThing1.action()); 
-		}
-		else if(choice == 2){
-			System.out.println(myThing2.action()); 
-		}
-		else if(choice == 3){
-			System.out.println(myThing3.action()); 
-		}
-		else if(choice == 4){
-			System.out.println(myThing4.action()); 
+		ActionOne myInstance1 = null; 
+		ActionTwo myInstance2 = null; 
+		ActionThree myInstance3 = null; 
+		ActionFour myInstance4 = null; 
+		switch(myInstances){
+			case ONE: 
+				if(myInstance1 == null){
+					myInstance1 = new ActionOne();
+				}
+				System.out.println("hello");
+				break;
+			case TWO: 
+				if(myInstance2 == null){
+					myInstance2 = new ActionTwo(); 
+				}
+				System.out.println("awww");
+				break; 
+			case THREE: 
+				if(myInstance3 == null){
+					myInstance3 = new ActionThree(); 
+				}
+				break;
+			case FOUR: 
+				if(myInstance4 == null){
+					myInstance4 = new ActionFour(); 
+				}
+				break; 
 		}
 	}
-
 }
